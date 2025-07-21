@@ -440,7 +440,8 @@
         </div>
       </div>
     </footer>
-    
+    <button id="scrollToTopBtn">&#8679;</button>
+
   
 
   <!-- loader -->
@@ -460,6 +461,20 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+	const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+	window.onscroll = function() {
+	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+		scrollToTopBtn.style.display = 'block';
+	} else {
+		scrollToTopBtn.style.display = 'none';
+	}
+	};
+	scrollToTopBtn.onclick = function() {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
+  </script>
+
     
   </body>
 </html>
